@@ -13,12 +13,12 @@ entities:
 slots:
   name:
     type: text
-    mapping:
+    mappings:
       - type: from_entity
         entity: name
   email:
     type: text
-    mapping:
+    mappings:
       - type: from_entity
         entity: email
 responses:
