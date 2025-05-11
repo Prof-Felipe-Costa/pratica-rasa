@@ -42,7 +42,7 @@ nlu:
     - Certo, muito obrigado
 
 - lookup: name
-  exemples: |
+  examples: |
     - João
     - Maria
     - Pedro
@@ -51,11 +51,11 @@ nlu:
     - Felipe
 
 - regex: email
-  exemples: |
+  examples: |
     - [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
 
 - synonym: Tchau
-  exemples: |
+  examples: |
     - Até mais
     - Adeus
     - Até a proxima
