@@ -2,32 +2,63 @@ version: "3.1"
 
 intents:
   - greet
+  - provide_contact
+  - describe_problem
   - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
 
+entities:
+  - name
+  - email
+
+slots:
+  name:
+    type: text
+    mapping:
+      - type: from_entity
+        entity: name
+  email:
+    type: text
+    mapping:
+      - type: from_entity
+        entity: email
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Olá! Como posso ajudar"
+  - text: "Oi! Em que posso ser útil hole?"
+  - text: "Bem-vindo! Como posso auxiliar você"
+  
+  utter_ask_contact:
+  - text: "Para começar, proderia me informar seu nome e email?"
+  - text: "Antes de prosseguir, me diga seu nome e email, por favor."
+  - text: "Para que eu possa ajudar, preciso do seu nome e email"
+  
+  utter_acknowledge_contact:
+  - text: "Obrigado! Qual é o problema com o qual você precisa de ajuda?"
+  - text: "Recebi seus dados. Por favor, descreva seu problema."
+  - text: "Agradeço pelas informações. Me conte mais sobre o seu problema."
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
+  utter_ask_details:
+  - text: "Você poderia me dar mais detalhes, por favor?"
+  - text: "Para atender melhor, descreva mais sobre isso."
+  - text: "Para ajudar da melhor forma, preciso de mais informções."
+  
+  utter_acknowledge_problem:
+  - text: "Entendi o seu problema, vou verificar isso agora."
+  - text: "Obrigado por explicar. Estou analisando sua situação."
+  - text: "Compreendo. Deixe-me ver o que posso fazer a respeito."
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Se precisar de mais alguma coisa, estou aqui. Até mais!"
+  - text: "Tchau! Não hesite em retornar se precisar de mais ajuda."
+  - text: "Até a proxima! Sempre à disposição para ajudar."
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+actions:
+- utter_greet
+- utter_ask_contact
+- utter_ask_details
+- utter_goodbye
+- utter_acknowledge_contact
+- utter_acknowledge_problem
 
 session_config:
   session_expiration_time: 60

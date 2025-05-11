@@ -3,89 +3,59 @@ version: "3.1"
 nlu:
 - intent: greet
   examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - Oi
+    - Olá
+    - Bom dia
+    - Boa tarde
+    - Boa noite
+    - Ei
+    - Opa
+
+- intent: provide_contact
+  examples: |
+    - Meu nome é [João]{"entity": "name"} e meu email é [joal@exemplo.com]{"entity": "email"}
+    - Sou [Maria]{"entity": "name"} e meu email é [maria@exemplo.com]{"entity": "email"}
+    - Me chamo [Pedro]{"entity": "name"} e meu contato é [pedro@exemplo.com]{"entity": "email"}
+    - Pode me chamar de [José]{"entity": "name"} e meu email é [jose@exemplo.com]{"entity": "email"}
+
+- intent: describe_problem
+  examples: |
+    - Não estou conseguindo acompanhar meu pedido
+    - Meu pedido não chegou
+    - Meu pedido veio com defeito
+    - Eu não comprei do site de vocês
+    - Meu pedido está demorando muito para chegar
+
+- intent: describe_details
+  examples: |
+    - Fiz o pedido na semana passada e ainda não foi entregue
+    - O código de rastreamento não mostra nenhuma atualização
+    - Era para ter chegado na terça-feira e já é quinta-feira
+    - Não recebi nenhum aviso de atraso ou problema na entraga
+    - O pagamento foi confirmado mas o pedido não chegou ainda
+    - Comprei três itens, mas o email de confirmação só listou dois
+    - Estou tentando entrar em contato com o suporte há dias sem resposta
 
 - intent: goodbye
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+    - Tchau
+    - Certo, muito obrigado
 
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+- lookup: name
+  exemples: |
+    - João
+    - Maria
+    - Pedro
+    - Ana
+    - Guido
+    - Felipe
 
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+- regex: email
+  exemples: |
+    - [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
 
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+- synonym: Tchau
+  exemples: |
+    - Até mais
+    - Adeus
+    - Até a proxima
